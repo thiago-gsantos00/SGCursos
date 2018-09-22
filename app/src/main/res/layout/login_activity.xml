@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="br.pucminas.sgcursos.viewmodel.LoginViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        tools:context=".ActivityLogin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp">
+
+            <TextView
+                android:id="@+id/txt_titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="sans-serif-smallcaps"
+                android:gravity="center_vertical"
+                android:text="@string/app_name"
+                android:textAlignment="gravity"
+                android:textSize="35sp" />
+
+            <TextView
+                android:id="@+id/txt_subtitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/txt_titulo"
+                android:layout_below="@+id/txt_titulo"
+                android:text="@string/tv_subtitulo"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintAnimationEnabled="true">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/txt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/field_hint_email"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:text="@={viewModel.aluno.email}"
+                android:textSize="20sp"
+                app:validateEmpty="@{true}"
+                app:validateEmptyMessage="@{@string/error_message_required}"
+                app:validateType='@{"email"}'
+                app:validateTypeMessage="@{@string/error_message_email}" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/txt_senha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/field_hint_senha"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:text="@={viewModel.aluno.senha}"
+                android:textSize="18sp"
+                app:validateEmpty="@{true}"
+                app:validateEmptyMessage="@{@string/error_message_required}"
+                app:validateMinLength="@{4}" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_entrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_entrar"
+            android:elevation="8dp"
+            android:onClick="@{(view) -> viewModel.autenticarAluno(view)}"
+            android:text="@string/button_entrar"
+            android:textColor="@color/branco"
+            android:textSize="18sp" />
+    </LinearLayout>
+</layout>

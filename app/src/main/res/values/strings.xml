@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">SGCursos</string>
+    <string name="tv_subtitulo">PUCMinas</string>
+    <string name="label_activity_resultado">Falha na autenticação</string>
+    <string name="message_login">Olá, %1$s</string>
+    <string name="button_entrar">Entrar</string>
+    <string name="button_tentar_novamente">Tentar novamente</string>
+    <string name="field_hint_email">E-mail</string>
+    <string name="field_hint_senha">Senha</string>
+    <string name="error_message_email">E-mail inválido</string>
+    <string name="error_message_required">Campo obrigatório</string>
+    <string name="error_message_communication_rest">Falha na comunicação com o servidor. Tente novamente.</string>
+    <string name="error_message_no_connection">Verifique sua conexão de Internet e tente novamente.</string>
+    <string name="label_menu_principal">Selecione uma opção:</string>
+    <string-array name="menu">
+        <item >Matrícula</item>
+        <item >Ver boletim</item>
+    </string-array>
+</resources>
